@@ -1,5 +1,6 @@
 package com.udacity.Data_Multitier_Architecture.datastores.entity;
 
+
 import jakarta.persistence.*;
 import org.hibernate.annotations.Nationalized;
 
