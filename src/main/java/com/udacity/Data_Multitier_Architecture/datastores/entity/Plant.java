@@ -1,5 +1,7 @@
 package com.udacity.Data_Multitier_Architecture.datastores.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.udacity.Data_Multitier_Architecture.datastores.view.Views;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Nationalized;
 
@@ -12,8 +14,10 @@ public class Plant {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @JsonView(Views.Public.class)
     @Nationalized
     private String name;
+    @JsonView(Views.Public.class)
     @Column(precision = 12, scale = 4)
     private BigDecimal price;
     @ManyToOne
