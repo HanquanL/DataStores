@@ -9,6 +9,7 @@ import org.hibernate.type.YesNoConverter;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -26,4 +27,7 @@ public class Delivery {
     @Convert(converter = YesNoConverter.class) // @Type(type = "yes_no") replacement
     private Boolean completed;
 
+    //Lazy fetch optional,but often a good idea for collection attributes
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery")
+    private List<Plant> plants;
 }
