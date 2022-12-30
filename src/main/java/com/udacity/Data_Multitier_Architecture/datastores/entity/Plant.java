@@ -47,4 +47,11 @@ public class Plant {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+    public Delivery getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(Delivery delivery) {
+        this.delivery = delivery;
+    }
 }
