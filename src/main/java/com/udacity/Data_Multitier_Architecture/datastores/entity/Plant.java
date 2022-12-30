@@ -20,7 +20,7 @@ public class Plant {
     @JsonView(Views.Public.class)
     @Column(precision = 12, scale = 4)
     private BigDecimal price;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY) //don't retrieve delivery if we don't need it
             @JoinColumn(name = "delivery_id") //map the join column in the plant table
     Delivery delivery;
 
